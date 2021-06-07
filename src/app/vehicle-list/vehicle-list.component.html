@@ -1,0 +1,19 @@
+<table class="table table-striped" border="1">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Mass</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vehicle of vehicles" class="table-striped" (click)="onSelect(vehicle)" [class.selected]="vehicle === selectedVehicle" scope="row"> 
+            <td>{{vehicle.id}}</td> 
+            <td>{{vehicle.name}}</td>
+            <td>{{vehicle.type}}</td> 
+            <td>{{vehicle.mass}}</td>
+        </tr>
+    </tbody>
+</table>
+<app-vehicle-details [vehicle]="selectedVehicle" class="vehicleinfo"></app-vehicle-details>
